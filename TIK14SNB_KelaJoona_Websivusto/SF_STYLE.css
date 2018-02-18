@@ -1,0 +1,271 @@
+﻿/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/* MEYERWEB STYLES */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, 
+nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;  /* basic font size is 16px */
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* MY OWN STYLES */
+
+body { /* Määrittää perustyylin kaikille bodyn sisällä oleville elementeille */
+	font-family: Verdana, Geneva, Tahoma, sans-serif; /* Määritetään tekstin fontti */
+	font-size: 100%; /* Fonttikoko */
+	font-weight: normal; /* Fonttimuotoilu */
+	font-style: normal; /* Fonttityyli */
+	font-variant: inherit;
+	text-transform: inherit;
+	color: white; /* Fontin väri */	
+	
+}
+
+#fixheader { /* Käytössä Header-elementissä jokaisella sivulla. Löytyy sivun vasemmasta ylänurkasta */
+	position:fixed; /* Ikkunaa pienennettäessä header liikkuu */
+	z-index:1000; /* Tarvitsee toimiakseen position-elementin, vaikuttaa siihen missä järjestyksessä elementit asettuvat sivulle. Jos tätä ei käytettäisi, taustakuva peittäisi headerin alleen. */
+	top: 0; /* Topilla ei vaikuta olevan edes merkitystä */
+	background-color: rgba(0,0,0,0.5) /*50% transparent black background*/
+}
+
+/* TAUSTA */
+
+#Tausta { /*Alasivujen taustakuva*/
+	background-image:url('PICTURES/images/SF_BG.png'); /* Mikä kuva on valittu taustakuvaksi */
+  	min-width: 1024px; /* Minimileveys */
+  	min-height:100%; /* Minimikorkeus */
+  	width: 100%; /* Leveys */
+  	height: auto; /* Korkeus */
+  	position: absolute; /* Ikkunaan pienennettäessä sivun scrollaaminen onnistuu */
+  	overflow-x:hidden; /* Poistaa valkoisen reunan */
+}
+
+#IndexTausta { /* Index.html:n oma taustamäärittely. Poikkeaa asettelusta. */
+	background-image:url('PICTURES/images/SF_BG.png');
+  	min-width: 1024px;
+  	min-height:100%;
+  	width: 100%;
+  	height: auto;
+  	position:fixed; /* Ikkunaa pienennettäessä ei mahdollista scrollata sivua, mutta ei tällöin jätä tyhjää valkoista tilaa sivun oikeaan reunaan ja alaosaan */
+  	  	
+/*Muokkausehdotus: Säätämällä pienemmän kuvan, ei jättäisi valkeaa tyhjää tilaa. Mutta tällöin myös bg-kuvaa jouduttaisiin muokkaamaan. */
+}
+
+/* NAVIGAATIO */
+
+nav { /* Säätelee navigaatiopalkin sijaintia */
+
+	padding-top:10px; /* Jättää hieman tyhjää tilaa header-elementin ja nav barin väliin */
+	padding-bottom:10px; /* Jättää hieman tyhjää tilaa h1-elementin ja nav barin väliin */
+	text-align:center; /* Tämä keskittää nav-osion. */
+}
+
+nav a { /* Säätelee navigaatiopalkin tekstin eli linkin asettelua, ulkonäköä, jne. */
+	display:block; /* Muotoilee navigaatiopalkin kuvakkeet suuremmiksi */
+	text-decoration:none; /* Navigaatiopalkin linkeissä alleviivaus ei käytössä */
+	text-align:center; /* Navigaationpalkin teksti keskitetty */
+	margin-right:5px; /* Linkkilaatikot eivät ole toisissaan kiinni */
+	border-top: 3px solid white;
+	border-left: 3px solid white; /* Border komennot säätelevät linkkilaatikoiden rajojen paksuutta, väriä ja muotoa */
+	border-right: 3px solid white;
+	border-radius: 10px 10px 0px 0px; /* Tekee bordereiden nurkista sileät ja pyöreät */
+}
+
+
+nav li {
+	display:inline-block; /* Tällä saadaan riviksi*/
+	line-height: 50px; /* Kasvattaa navigaatiopalkin laatikot korkeussuunnassa sopivan kokoisiksi */
+	width: 140px; /* Kasvattaa navigaatiopalkin laatikot leveyssuunnassa sopivan kokoisiksi */
+	margin-right: 10px; /* Navigaatiopalkin laatikoiden välissä enemmän tilaa */
+	
+}
+
+
+nav li a:hover {
+	
+	border-radius:10px 10px 0px 0px; /* Rajaa hoverin ulottumaan laatikoiden alueelle */
+	background-color: black; /* Määrittää värin joka tulee kun siirretään osoitin laatikon ylle */
+}
+
+/* OTSIKOT */
+	
+h1 { /* Isojen otsikoiden fontti */
+	color:white; /* Fontin väri */
+	font-size:24px; /* Fonttikoko */
+	text-align:center; /* Teksti on keskitetty */
+	border: 2px solid white; /* Otsikko on rajattu valkoisella viivalla, jotta erottuisi paremmin */
+	line-height:50px; /* Kasvattaa laatikon kokoa korkeussuunnassa */
+	background-color:black; /* Taustan väri */
+}
+
+h2 { /* Sivujen alaotsikkona käytettävä */
+	color:white; /* Fontin väri */
+	font-size:34px; /* Fonttikoko */
+	font-family: "Old English Text MT"; /* tyylikäs vanhanaikainen fontti */
+	padding-left: 25px; /* Sisentää tekstiä hieman */
+	background-color:rgba(0,0,0,0.50); /* Tekstin taustaväri, osittain läpinäkyvä, jottei teksti sekoitu taustaan */
+	line-height:1.5; /* Kasvattaa rivien etäisyyttä toisistaan, jotta tekstistä tulisi helppolukuisempaa */
+	border-bottom:4px blue ridge; /* Tekstin alaosaan tulee sininen raja*/
+}
+
+h3 { /* Discography- sivulla käytetty */
+	color:white; /* Fontin väri */
+	text-align:left; /* Teksti alkaa vasemmalta */
+	font-family:"HelveticaNeueLT Pro 55 Roman"; /* Fontti hieman virallisemman näköinen */
+	font-size:24px; /* Fonttikoko */
+	padding-left: 50px; /* Jättää tilaa vasemmalle */
+}
+
+h4 { /*  Back- nappi mm. albumisivuilla */
+	color:white; /* Fontin väri */
+	text-align:center; /* Teksti on keskitetty */
+	border: 2px solid white; /* Teksti on laatikon sisällä */
+	background-color:black; /* Taustan väri on musta, jotta erottuisi paremmin taustasta */
+	clear: both; /* Sijoittaa tekstikappaleen sivun alaosaan */
+	
+}
+
+h5 { /* Headerin copyright merkissä*/
+	color:white; /* Fontin väri */
+	text-align:center; /* Keskittää tekstin */
+}
+
+/* TEKSTI */
+
+a {
+	color:white; /* Estää linkkien tekstiä värjäytymästä violetiksi klikkauksen jälkeen */
+}
+
+#text { /* Yleinen tekstifontti sivustolla */
+	color: white;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-size:24px;
+	padding-top:10px; /* Teksti jättää hieman väliä yläosaan */
+	padding-bottom:10px; /* Teksti jättää hieman väliä alaosaan */
+	padding-left:25px; /* Teksti ei ala suoraan vasemmasta reunasta */
+	padding-right:25px; /* Teksti ei jatku suoraan oikeaan reunaan */
+	background-color:rgba(0,0,0,0.50); /* Tekstin taustaväri, osittain läpinäkyvä, jottei teksti sekoitu taustaan */
+	letter-spacing:0.05em; /* Kirjaimet ovat hieman erillään toisistaan, helppolukuisempaa. Tosin näyttää myös että teksti olisi kokonaisuudeltaan pitempi */
+	line-height:1.5; /* Kasvattaa rivien etäisyyttä toisistaan, jotta tekstistä tulisi helppolukuisempaa */
+
+}
+
+#talk { /* Haastattelu, henkilön suora lainaaminen */
+	color:silver; /* Fontin väri erilainen. Kyseessä on henkilön suora lainaaminen, erottuu paremmin muusta tekstistä */
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+	font-size:24px;
+	font-style:italic; /* Kyseessä on henkilön suora lainaaminen, yleisesti tapana käyttää italiciä */
+	padding-top:10px; /* Teksti jättää hieman väliä yläosaan */
+	padding-bottom:10px; /* Teksti jättää hieman väliä alaosaan */
+	padding-left:35px; /* Teksti ei ala suoraan vasemmasta reunasta */
+	padding-right:25px; /* Teksti ei jatku suoraan oikeaan reunaan */
+	background-color:rgba(0,0,0,0.50); /* Tekstin taustaväri, osittain läpinäkyvä, jottei teksti sekoitu taustaan */
+	letter-spacing:0.05em; /* Kirjaimet ovat hieman erillään toisistaan, helppolukuisempaa. Tosin näyttää myös että teksti olisi kokonaisuudeltaan pitempi */
+	line-height:1.5; /* Kasvattaa rivien etäisyyttä toisistaan, jotta tekstistä tulisi helppolukuisempaa */
+	
+
+}
+
+#band { /* Band- sivulla käytetty fontti, tarkoituksena näyttää virallisemmalta sivulta */
+	color:white;
+	font-size:20px;
+	font-family:"Eras Medium ITC"; /* Päättellinen fontti */
+	background-color:rgba(0,0,0,0.50); /* Tekstin taustaväri, osittain läpinäkyvä, jottei teksti sekoitu taustaan */
+	float:left; /* Siirtää tekstin oikealle paikalle */
+	padding-left:5px; /* Jättää hieman tyhjää tilaa tekstin ja vasemmanpuoleisen reunan väliin */
+	padding-right:5px; /* Jättää hieman tyhjää tilaa tekstin ja oikeanpuoleisen reunan väliin */
+	line-height:1.5; /* Kasvattaa rivien etäisyyttä toisistaan, jotta tekstistä tulisi helppolukuisempaa */
+}
+
+#quote { /* Lainattu eri ihmisten mielipiteitä, haluttu kuitenkin tehdä eroa talk-osioon, sillä kyseessä eri henkilö(t) kuin talk-osiossa (tämän osion henkilöt ovat bändin ulkopuolisia, lisäksi haluttu saada näyttämään tyylikkäämältä */
+	color:white;
+	font-style:italic;
+	font-family:"Bradley Hand ITC"; /* Kaunis fontti, kuin käsinkirjoitettu */
+	font-size: 30px;
+	padding-top:10px; /* Teksti jättää hieman väliä yläosaan */
+	padding-bottom:10px; /* Teksti jättää hieman väliä alaosaan */
+	background-color:rgba(0,0,0,0.50); /* Tekstin taustaväri, osittain läpinäkyvä, jottei teksti sekoitu taustaan */
+	text-align:center; /* Teksti on keskitetty */
+	line-height:1.5; /* Kasvattaa rivien etäisyyttä toisistaan, jotta tekstistä tulisi helppolukuisempaa */
+
+
+}
+
+/* TAULUKKO */
+
+table {
+	display:inline-block; /* Tekstin suuntainen, mutta sallii koon muuttamisen laatikon tapaan */
+	border-spacing: 5px; /* Jättää väliä borderien kohdalle */
+	float:left; /* Siirtää tablen vasemmalle */
+	width:30%; /* Muuttaa tablen leveyttä */
+	
+	
+}
+
+
+td, th {
+	color:white; /* Fontin väri */
+	padding:15px; /* Kasvattaa taulukon sarakkeiden mittasuhteita */
+	border:2px white solid; /* Borderin koko, väri ja muoto */
+	background-color:rgba(0,0,0,0.50); /* Tekstin taustaväri, osittain läpinäkyvä, jottei teksti sekoitu taustaan */
+	text-align:center; /* Teksti on keskitetty */
+	
+}
+
+#members { /* td:n erikoismäärittely bändi- osion kuvien alapuolella */
+	padding:67px; /* Kasvattaa koko laatikon kokoa, peittää ison näytön mutta scrollaus aiheuttaa valkoista reunaa */
+	font-family:"Eras Medium ITC"; /* Päättellinen fontti */
+	background-color:rgba(0,0,0,0.50); /* Tekstin taustaväri, osittain läpinäkyvä, jottei teksti sekoitu taustaan */
+	border:0px white none; /* Säädetään niin, ettei Borderia ole */
+	line-height:1.5; /* Kasvattaa rivien etäisyyttä toisistaan, jotta tekstistä tulisi helppolukuisempaa */
+	
+}
+
+
+#smallsizealbum {
+	display:inline-block; /* Blockin ansiosta kuva säilyy keskellä tyhjää tilaa eikä alempana kuin pelkkien margineiden kanssa */
+
+}
